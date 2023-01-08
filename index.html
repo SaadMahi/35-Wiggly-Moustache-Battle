@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiggly Moustache</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background: #f5d6b4;
+        display: grid;
+        place-items: center;
+      }
+
+      div {
+        width: 100px;
+        height: 50px;
+
+        border-radius: 50px 50px 0 0;
+        border: #d86f45 20px solid;
+        border-bottom: 0;
+
+        transform: translateY(-25px);
+      }
+
+      span {
+        width: 100px;
+        height: 50px;
+
+        border-radius: 50px 50px 0 0;
+        border: #d86f45 20px solid;
+        border-bottom: 0;
+      }
+
+      span:first-child {
+        position: absolute;
+        transform: rotateZ(180deg) translate(100px, -29px);
+      }
+
+      span:last-child {
+        position: absolute;
+        transform: rotateZ(180deg) translate(-60px, -29px);
+      }
+
+      span::before {
+        content: "";
+
+        display: inline-block;
+
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #d86f45;
+      }
+
+      span:first-child::before {
+        transform: translate(300%, 100%);
+      }
+
+      span:last-child::before {
+        transform: translate(-100%, 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>
